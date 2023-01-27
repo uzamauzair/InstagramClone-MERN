@@ -1,0 +1,28 @@
+{
+  "name": "surgeinsta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usamauzair-web/SurgeInsta.git"
+  },
+  "author": "Uzama Uzair",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "nodemailer": "^6.4.6",
+    "nodemailer-sendgrid-transport": "^0.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/usamauzair-web/SurgeInsta/issues"
+  },
+  "homepage": "https://github.com/usamauzair-web/SurgeInsta#readme"
+}
