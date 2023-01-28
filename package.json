@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test" : "jest"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/usamauzair-web/SurgeInsta/issues"
   },
-  "homepage": "https://github.com/usamauzair-web/SurgeInsta#readme"
+  "homepage": "https://github.com/usamauzair-web/SurgeInsta#readme",
+  "devDependencies": {
+    "jest": "^29.4.1",
+    "supertest": "^6.3.3"
+  }
 }
