@@ -20,7 +20,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.7",
     "nodemailer": "^6.4.6",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "jest": "^25.5.0"
   },
   "bugs": {
     "url": "https://github.com/usamauzair-web/SurgeInsta/issues"
