@@ -161,7 +161,7 @@ const Home = () => {
                     unlikePost(item._id);
                   }}
                 >
-                  thumb_down
+                  dislike
                 </i>
               ) : (
                 <i
@@ -170,7 +170,7 @@ const Home = () => {
                     likePost(item._id);
                   }}
                 >
-                  thumb_up
+                  Like
                 </i>
               )}
 
