@@ -166,3 +166,7 @@ resource "aws_security_group" "service_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+output "alb_dns" {
+  value = "${aws_alb.application_load_balancer.dns_name}"
+}
