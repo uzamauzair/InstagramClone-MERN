@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../../App";
 import "materialize-css/dist/css/materialize.min.css";
 import { Link } from "react-router-dom";
@@ -126,6 +128,66 @@ const Home = () => {
         return (
           <div className="card home-card" key={item._id}>
             <h5 style={{ padding: "5px" }}>
+              {/* <Link
+                to={
+                  item.postedBy._id !== state._id
+                    ? "/profile/" + item.postedBy._id
+                    : "/profile"
+                }
+              >
+                {item.postedBy.name}
+              </Link>{" "}
+              {item.postedBy._id == state._id && (
+                <i
+                  className="material-icons"
+                  style={{
+                    float: "right",
+                  }}
+                  onClick={() => deletePost(item._id)}
+                >
+                  delete
+                </i>
+              )} */}
+            </h5>
+            <div className="card-image">
+              <img src={item.photo} />
+            </div>
+            <div className="card-content">
+              {/* <i className="material-icons" style={{ color: "red" }}>
+                favorite
+              </i> */}
+              {item.likes.includes(state._id) ? (
+                // <i
+                //   className="material-icons"
+                //   onClick={() => {
+                //     unlikePost(item._id);
+                //   }}
+                // >
+                //   dislike
+                // </i>
+                <i
+                  onClick={() => {
+                    unlikePost(item._id);
+                  }}
+                >
+                  <FontAwesomeIcon icon="fa-solid fa-heart" />
+                </i>
+              ) : (
+                // <i
+                //   className="material-icons"
+                //   onClick={() => { likePost(item._id);}}
+                // >
+                //   Like
+                // </i>
+                <i
+                  onClick={() => {
+                    likePost(item._id);
+                  }}
+                >
+                  <FontAwesomeIcon icon="fa-regular fa-heart" />
+                </i>
+              )}
+              {item.likes.length}
               <Link
                 to={
                   item.postedBy._id !== state._id
@@ -146,35 +208,6 @@ const Home = () => {
                   delete
                 </i>
               )}
-            </h5>
-            <div className="card-image">
-              <img src={item.photo} />
-            </div>
-            <div className="card-content">
-              <i className="material-icons" style={{ color: "red" }}>
-                favorite
-              </i>
-              {item.likes.includes(state._id) ? (
-                <i
-                  className="material-icons"
-                  onClick={() => {
-                    unlikePost(item._id);
-                  }}
-                >
-                  dislike
-                </i>
-              ) : (
-                <i
-                  className="material-icons"
-                  onClick={() => {
-                    likePost(item._id);
-                  }}
-                >
-                  Like
-                </i>
-              )}
-
-              <h6>{item.likes.length} likes</h6>
               <h6>{item.title}</h6>
               <p>{item.body}</p>
               {item.comments.map((record) => {
