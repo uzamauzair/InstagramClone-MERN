@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserContext } from "../../App";
 import "materialize-css/dist/css/materialize.min.css";
 import { Link } from "react-router-dom";
@@ -152,6 +151,9 @@ const Home = () => {
               <img src={item.photo} />
             </div>
             <div className="card-content">
+              <i className="material-icons" style={{ color: "red" }}>
+                favorite
+              </i>
               {item.likes.includes(state._id) ? (
                 <i
                   className="material-icons"
@@ -168,7 +170,7 @@ const Home = () => {
                     likePost(item._id);
                   }}
                 >
-                  <FontAwesomeIcon icon="fa-light fa-heart" />
+                  Like
                 </i>
               )}
 
