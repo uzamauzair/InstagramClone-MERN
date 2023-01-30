@@ -30,7 +30,7 @@ router.post("/signup", (req, res) => {
       if (savedUser) {
         return res
           .status(422)
-          .json({ error: "user already exists with that email" });
+          .json({ error: "user already exists from this email" });
       }
       bcrypt.hash(password, 12).then((hashedpassword) => {
         const user = new User({

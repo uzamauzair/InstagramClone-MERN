@@ -128,7 +128,7 @@ const Home = () => {
         return (
           <div className="card home-card" key={item._id}>
             <h5 style={{ padding: "5px" }}>
-              {/* <Link
+              <Link
                 to={
                   item.postedBy._id !== state._id
                     ? "/profile/" + item.postedBy._id
@@ -147,7 +147,7 @@ const Home = () => {
                 >
                   delete
                 </i>
-              )} */}
+              )}
             </h5>
             <div className="card-image">
               <img src={item.photo} />
@@ -171,6 +171,7 @@ const Home = () => {
                   }}
                 >
                   <FontAwesomeIcon icon="fa-solid fa-heart" />
+                  Remove_Like
                 </i>
               ) : (
                 // <i
@@ -184,19 +185,20 @@ const Home = () => {
                     likePost(item._id);
                   }}
                 >
-                  <FontAwesomeIcon icon="fa-regular fa-heart" />
+                  <FontAwesomeIcon icon="fa-regular fa-heart" /> Like
                 </i>
               )}
-              {item.likes.length}
-              <Link
-                to={
-                  item.postedBy._id !== state._id
-                    ? "/profile/" + item.postedBy._id
-                    : "/profile"
-                }
-              >
-                {item.postedBy.name}
-              </Link>{" "}
+              {
+                <Link
+                  to={
+                    item.postedBy._id !== state._id
+                      ? "/profile/" + item.postedBy._id
+                      : "/profile"
+                  }
+                >
+                  <b>&nbsp;&nbsp;{item.postedBy.name}</b>
+                </Link>
+              }{" "}
               {item.postedBy._id == state._id && (
                 <i
                   className="material-icons"
@@ -205,9 +207,10 @@ const Home = () => {
                   }}
                   onClick={() => deletePost(item._id)}
                 >
-                  delete
+                  <FontAwesomeIcon icon="fa-solid fa-trash" /> Delete
                 </i>
               )}
+              <b> {item.likes.length} &nbsp; &nbsp; &nbsp; &nbsp;</b>
               <h6>{item.title}</h6>
               <p>{item.body}</p>
               {item.comments.map((record) => {

@@ -82,10 +82,8 @@ const SignIn = () => {
 
       <div className="col s6">
         <div className="mycard">
-          <div className="card auth-card input-field">
-            <h2>Surge SE Intern March 2023</h2>
-            <h3>Uzama Uzair</h3>
-          </div>
+          <h2>Surge SE Intern March 2023</h2>
+          <h3>Uzama Uzair</h3>
         </div>
       </div>
     </div>
